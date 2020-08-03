@@ -1,8 +1,8 @@
 
 Pod::Spec.new do |spec|
 
-  spec.name         = "UnityNativeSDK"
-  spec.version      = "0.0.1"
+  spec.name         = "UntiyTestFramework"
+  spec.version      = "0.0.2"
   spec.summary      = "A short description of UnityNativeSDK."
 
   spec.description  = <<-DESC

@@ -1,37 +1,30 @@
 
-Pod::Spec.new do |spec|
+Pod::Spec.new do |s|
 
-  spec.name         = "UntiyTestFramework"
-  spec.version      = "0.0.3"
-  spec.summary      = "A short description of UnityNativeSDK."
-
-  spec.description  = <<-DESC
-  TODO: Add long description of the pod here.
+  s.name         = "UnityNativeSDK"
+  s.version      = "0.0.5"
+  s.summary      = "广告sdk"
+  s.description  = <<-DESC
+    1.0.0:集合各个平台sdk
                    DESC
 
-  spec.homepage     = "https://github.com/wyqwsg04/UnityNativeSDK"
-  spec.license      = { :type => "MIT", :file => "LICENSE" }
-  spec.author             = { "5hito" => "beemans@foxmail.com" }
-  
-  s.ios.deployment_target    = '10.0'
-  spec.source       = { :git => "https://github.com/wyqwsg04/UnityNativeSDK.git", :tag => s.version.to_s }
+  s.license = {"type"=>"MIT", "file"=>"LICENSE"}
+  s.author             = { "5hito" => "beemans@foxmail.com" }
+  s.homepage     = "https://github.com/5hito/UnityNativeSDK"
+  s.source       = { :git => "https://github.com/5hito/UnityNativeSDK.git", :tag => s.version.to_s }
 
-  # s.frameworks = "AdSupport", "CoreLocation", "QuartzCore", "SystemConfiguration", "CoreTelephony", "Security", "StoreKit", "WebKit", "AVFoundation"
-
-  # s.library   = "iconv"
-  # s.libraries = "z", "xml2"
+  # s.source_files  = "lib/Header/*.h"
+  # s.resources = "lib/Resources/*.bundle"
 
   s.requires_arc = true
+  s.ios.deployment_target    = '10.0'
+  # s.ios.vendored_libraries = 'lib/libBeeMobUnionAdSDK.a'
 
+  valid_archs = ['armv7', 'armv7s', 'x86_64', 'arm64']
+  s.xcconfig = {
+    'VALID_ARCHS' =>  valid_archs.join(' '),
+  }
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
 
-  # s.source_files  = "lib/*.h"
-
-  #.a库使用
-  # s.ios.vendored_libraries = 'lib/libGDTMobSDK.a'
-
-  #framework使用
-  s.ios.vendored_framework   = 'UntiyTestFramework.framework'
-
+  s.ios.vendored_framework = 'UntiyTestFramework.framework'
 end

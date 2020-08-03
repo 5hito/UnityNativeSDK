@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "UnityNativeSDK"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "广告sdk"
   s.description  = <<-DESC
     1.0.0:集合各个平台sdk
@@ -25,6 +25,6 @@ Pod::Spec.new do |s|
     'VALID_ARCHS' =>  valid_archs.join(' '),
   }
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-
+  s.frameworks = 'UIKit', 'AdSupport'
   s.ios.vendored_framework = 'UntiyTestFramework.framework'
 end
